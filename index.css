@@ -1,0 +1,72 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: blanchedalmond;
+    color: rgb(90, 25, 121);
+    margin: 0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(60, 29, 119);
+}
+
+.page {
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0;
+    border: 2px;
+    border-style: solid;
+    border-color: brown;
+}
+
+.card {
+    background-color: white;
+    width: calc(33.33%-30px);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(36, 199, 85);
+    border-radius: 5px;
+}
+
+.card h2 {
+    color: rgb(90, 25, 121);
+}
+
+.image {
+    background-image: url(pictures/3975029.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 60%;
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(36, 199, 85);
+    border-radius: 5px;
+}
+
+.del {
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-color: rgb(36, 199, 85);
+    border-radius: 5px;
+    margin: 10px;
+    color: red;
+    
+}
+
+.del:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
