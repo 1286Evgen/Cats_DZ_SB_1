@@ -19,6 +19,7 @@ header {
 }
 
 .page {
+    position: relative;
     background-color: aquamarine;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -105,11 +106,19 @@ header {
 }
 
 .add_form{
+    display: none;
+    position: absolute; 
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
     z-index: 10;
-    height: 500px;
-    width: 100%;
     background-color: rgb(60, 130, 177);
     border-style: solid;
     border-color: rgb(36, 199, 85);
     opacity: 50%;
+}
+
+.add_form.active{
+    display: flex;
 }
