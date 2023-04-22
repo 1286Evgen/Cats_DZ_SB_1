@@ -1,0 +1,1 @@
+let like = document.querySelector(".fa-heart");

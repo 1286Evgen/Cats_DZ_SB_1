@@ -4,6 +4,8 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0%;
     background-color: blanchedalmond;
     color: rgb(90, 25, 121);
     margin: 0;
@@ -45,6 +47,19 @@ header {
     color: rgb(90, 25, 121);
 }
 
+.fa-heart {
+    margin-left: 20px;
+}
+
+.fa-heart:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
 .image {
     background-image: url(pictures/3975029.png);
     background-size: contain;
@@ -58,6 +73,7 @@ header {
 }
 
 .del {
+    font-family: cursive;
     background-color: rgb(255, 255, 255);
     border-style: solid;
     border-color: rgb(36, 199, 85);
@@ -88,3 +104,12 @@ header {
     color: red;
 }
 
+.add_form{
+    z-index: 10;
+    height: 500px;
+    width: 100%;
+    background-color: rgb(60, 130, 177);
+    border-style: solid;
+    border-color: rgb(36, 199, 85);
+    opacity: 50%;
+}
