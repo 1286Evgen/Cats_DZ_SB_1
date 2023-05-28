@@ -1,36 +1,32 @@
 body {
-    margin: 0px;
+    margin: 0;
     font-family: cursive;
 }
 
 header {
-    position: sticky;
+    position: relative;
     top: 0%;
-    background-color: blanchedalmond;
-    color: rgb(90, 25, 121);
+    background-color: #FFE4B5 ;
+    color: #FF1493;
     margin: 0;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;   
-    border: 2px;
-    border-style: solid;
-    border-color: rgb(60, 29, 119);
+    border: 3px solid #FF1493;
 }
 
 .page {
     position: relative;
     background-color: aquamarine;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 0;
     margin-bottom: 20px;
-    border: 2px;
-    border-style: solid;
-    border-color: brown;
+    border: 3px solid rgb(36, 199, 85);
 }
 
-.card {
+.cat_card {
     background-color: white;
     width: calc(33.33%-30px);
     height: 300px;
@@ -38,14 +34,12 @@ header {
     flex-direction: column;
     align-items: center;
     margin: 15px;
-    border: 2px;
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
+    border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
 }
 
-.card h2 {
-    color: rgb(90, 25, 121);
+.cat_card h2 {
+    color: #FF1493;
 }
 
 .fa-heart {
@@ -53,61 +47,74 @@ header {
 }
 
 .fa-heart:hover {
-    color: red;
+    color: #FF1493;
     cursor: pointer;
 }
 
-.red {
-    color: red;
-}
-
-.image {
-    background-image: url(pictures/3975029.png);
+.card_image {
+    background: url(pictures/cat_unknown.png);
     background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 60%;
-    height: 60%;
-    border: 2px;
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
+    width: 90%;
+    height: 300px;
+    border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
 }
 
-.del {
+.card_buttons button {
     font-family: cursive;
     background-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
+    border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
     margin: 10px;
-    color: red;
+    color: #FF1493;
+    display: grid;
+    width: 90%;
 }
 
-.but_change:hover {
-    background-color: red;
+.cat_info {
+    width: 50%;
+}
+
+.cat_del {
+    width: 50%;
+}
+
+.button_change:hover {
+    background-color: #FF1493;
     color: white;
     cursor: pointer;
 }
 
-.add_cat {
+.add_cat_button {
     position: absolute;
     right: 0;
     left: 0;
     margin: 0 auto;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     font-size: 50px;
     cursor: pointer; 
     background-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
+    border: 3px solid rgb(36, 199, 85);
     border-radius: 50%;
-    color: red;
+    color: #FF1493;
 }
 
-.add_form {
+.add_cat_form {
+    display: grid;
+    margin-top: 10px;
+    gap: 8px;
+    height: 300px;
+    width: 300px;
+    font-family: cursive;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+    justify-content: center;
+    padding: 10px;
     position: absolute;
-    display: none;
     left:0;
     right:0;
     top:0;
@@ -118,45 +125,38 @@ header {
     align-items: center;
 }
 
-.add_form.active {
-    display: flex;
-}
-
-.form {
-    display: grid;
-    margin-top: 10px;
-    gap: 8px;
-    height: 300px;
-    width: 300px;
-    font-family: cursive;
-    background-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
-    border-radius: 5px;
-    justify-content: center;
-    padding: 10px;
-}
-
-.form h4{
-    color:rgb(207, 52, 181);
+.add_cat_form h3{
+    color:#FF1493;
     margin: 0 auto;
 }
 
-input{
+.add_cat_form button {
+    font-family: cursive;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+    margin: 10px;
+    color: #FF1493;
+    display: grid;
+    width: 90%;
+}
+
+.add_cat_form input{
     width: 100%;
     box-sizing: border-box;
     height: 20px;
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
 }
 
-.preview {
-    background-image: url(pictures/3975029.png);
-    background-size: cover;
+.form_cat_preview {
+    background-image: url(pictures/cat_unknown.png);
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 90%;
     height: 180px;
-    border: 2px;
-    border-style: solid;
-    border-color: rgb(36, 199, 85);
+    border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
     margin: 0 auto;
 }
