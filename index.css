@@ -52,7 +52,7 @@ header {
 }
 
 .card_image {
-    background: url(pictures/cat_unknown.png);
+    background: url(cat_unknown.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,23 +62,14 @@ header {
     border-radius: 5px;
 }
 
-.card_buttons button {
+.but_card {
     font-family: cursive;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
     margin: 10px;
     color: #FF1493;
-    display: grid;
     width: 90%;
-}
-
-.cat_info {
-    width: 50%;
-}
-
-.cat_del {
-    width: 50%;
 }
 
 .button_change:hover {
@@ -150,7 +141,7 @@ header {
 }
 
 .form_cat_preview {
-    background-image: url(pictures/cat_unknown.png);
+    background-image: url(cat_unknown.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
