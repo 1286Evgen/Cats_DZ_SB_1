@@ -93,51 +93,58 @@ header {
     color: #FF1493;
 }
 
-.add_cat_form {
-    display: grid;
-    margin-top: 10px;
-    gap: 8px;
-    height: 300px;
-    width: 300px;
-    font-family: cursive;
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(36, 199, 85);
-    border-radius: 5px;
-    justify-content: center;
-    padding: 10px;
-    position: absolute;
+.form_back {
+    position: fixed;
     left:0;
     right:0;
     top:0;
     bottom:0;
     z-index: 10;
     background: rgba(69, 161, 161, 0.548);
-    justify-content: center;
+    backdrop-filter: blur(2px);
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.add_cat_form h3{
+.add_form {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+    padding: 30px;
+    width: 300px;
+}
+
+.add_form h3{
     color:#FF1493;
     margin: 0 auto;
 }
 
-.add_cat_form button {
-    font-family: cursive;
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(36, 199, 85);
-    border-radius: 5px;
-    margin: 10px;
-    color: #FF1493;
+.add_form form{
     display: grid;
-    width: 90%;
+    gap: 10px;
 }
 
-.add_cat_form input{
+input, textarea {
+    font-family: cursive;
     width: 100%;
     box-sizing: border-box;
     height: 20px;
     border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
+}
+
+form label {
+    display: flex;
+    color:#FF1493;
+}
+
+form label input {
+    width: 20px;
+}
+
+textarea {
+    min-height: 70px;
 }
 
 .form_cat_preview {
@@ -151,3 +158,15 @@ header {
     border-radius: 5px;
     margin: 0 auto;
 }
+
+form button {
+    font-family: cursive;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+    color: #FF1493;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
