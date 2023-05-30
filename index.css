@@ -94,6 +94,7 @@ header {
 }
 
 .form_back {
+    display: none;
     position: fixed;
     left:0;
     right:0;
@@ -102,17 +103,27 @@ header {
     z-index: 10;
     background: rgba(69, 161, 161, 0.548);
     backdrop-filter: blur(2px);
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .add_form {
+    margin: 0 auto;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(36, 199, 85);
     border-radius: 5px;
     padding: 30px;
     width: 300px;
+    position: relative
+}
+
+.form-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 150%;
+    color:#FF1493;
+    cursor: pointer; 
 }
 
 .add_form h3{
