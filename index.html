@@ -22,21 +22,22 @@
         <div class="add_form">
             <i class="fa-regular fa-circle-xmark form-close"></i>
             <h3>добавить кису</h3>
-            <form>
-                <input type="text" name="name" placeholder="имя кисы">
+            <form id="add">
+                <input type="text" name="id" placeholder="id кисы" required>
+                <input type="text" name="name" placeholder="имя кисы" required>
                 <input type="text" name="image" placeholder="фото кисы">
                 <input type="number" name="age" placeholder="возраст кисы">
                 <label>любимчик
                     <input type="checkbox" name="favorite">
                 </label>
                 <textarea name="description" placeholder="инфомация о кисе"></textarea>
-                <button type="submit">добавть</button>
+                <button type="submit">добавить</button>
             </form>
         </div>
     </div>
-    <script src="global.js"></script>
-    <script src="functions.js"></script>
-    <script src="index.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
             
