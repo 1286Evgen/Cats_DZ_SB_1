@@ -27,6 +27,7 @@ let create_card = function(pet, tag) {                          // функци�
     let but_del = document.createElement("button");                // создаю элемент для блока кнопок
     but_del.className = "but_card button_change";
     but_del.innerText = "удалить";
+    but_del.addEventListener('click', (element) => {del_cat(pet.id, card)});
 
     card.append(cat_name, card_image, but_info, but_del);                 // все элементы добавляем в карточку
     tag.append(card);
@@ -48,4 +49,15 @@ function setLike(el, id, like) {
     .then(data => {
         console.log(data);
     })
+}
+
+function del_cat(id, element) {
+    fetch((path+"/delete/"+id), {
+        method: "delete"
+    })
+    .then(res => {
+        if(res.status === 200){
+            element.remove();
+        }
+})
 }

@@ -27,7 +27,6 @@ addFormClose.addEventListener("click", function() {
 form1.addEventListener("submit", function(element) {
     element.preventDefault();   // останавливаем действие по умолчанию
     let body = {};
-    let cat_id
     //console.log(form1.children); // выводим дочерние элементы формы
     //console.log(form1.elements); // выводим все свойства формы(input, textarea, select...)
 
@@ -46,38 +45,35 @@ form1.addEventListener("submit", function(element) {
             }
         }
     }
-    /*fetch(path + "/show", {
-        method: "get",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-        .then(function(result) {
-            return result.json();
-        })
-        .then(function(data) {
-            if(data.length){ 
-                cat_id = (data[data.length -1]).id + 1; // устанавливаем номер id, на 1 больше чем у крайнего элемента
-            }
-            else {
-                cat_id = 1;    // если вбазе нет котов, то id = 1, т.е это первый кот
-            }
-            body.id = cat_id;  // присваиваем id номер
-        })*/
 
-    console.log(body);
-    fetch(path + "/add", {    
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-    })
-    .then(res => {
+    fetch(path + "/ids")
+        .then(res => res.json())
+        .then(ids => { 
+            body.id = ids[ids.length -1] + 1;
+            console.log(body);
+            return (
+                fetch(path + "/add", {    
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(body)
+                })
+            )
+        })
+        
+        .then(res => {
         if (res.ok) {
             form1.reset();
             addForm.style.display = "none";
             create_card(body, block);
         }
-    })
-});
+        else {
+            return res.json();
+        }
+        })
+        .catch(err => {
+        if(err.message) {
+            alert(err.message);
+        }})
+})
