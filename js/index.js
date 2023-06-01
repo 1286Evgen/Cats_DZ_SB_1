@@ -1,4 +1,4 @@
-fetch(path + "/show", {
+/*fetch(path + "/show", {
     metod: "get",
     headers: {
         "Content-Type": "application/json"
@@ -9,12 +9,12 @@ fetch(path + "/show", {
     })
     .then(function(data) {
         //console.log(data);
-        if(data.length){
-            for(let pet of data){
-                create_card(pet, block);
-            }
+        cats = [...data];
+        localStorage.setItem("cats_data", JSON.stringify(data));
+        for(let pet of data){
+            create_card(pet, block);
         }
-    })
+    })*/
 
 plus.addEventListener("click", function() {
     addForm.style.display = "flex";
@@ -47,33 +47,33 @@ form1.addEventListener("submit", function(element) {
     }
 
     fetch(path + "/ids")
-        .then(res => res.json())
-        .then(ids => { 
-            body.id = ids[ids.length -1] + 1;
-            console.log(body);
-            return (
-                fetch(path + "/add", {    
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(body)
-                })
-            )
-        })
+    .then(res => res.json())
+    .then(ids => { 
+        body.id = ids[ids.length -1] + 1;
+        console.log(body);
+        return (
+            fetch(path + "/add", {    
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+            })
+        )
+    })
         
-        .then(res => {
-        if (res.ok) {
-            form1.reset();
-            addForm.style.display = "none";
-            create_card(body, block);
-        }
-        else {
-            return res.json();
-        }
-        })
-        .catch(err => {
-        if(err.message) {
-            alert(err.message);
-        }})
+    .then(res => {
+    if (res.ok) {
+        form1.reset();
+        addForm.style.display = "none";
+        create_card(body, block);
+    }
+    else {
+        return res.json();
+    }
+    })
+    .catch(err => {
+    if(err.message) {
+        alert(err.message);
+    }})
 })
