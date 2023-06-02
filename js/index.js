@@ -73,13 +73,24 @@ form1.addEventListener("submit", function(element) {
             body: JSON.stringify(body)
             })
         )
-    })
-        
+    }) 
     .then(res => {
     if (res.ok) {
         form1.reset();
         addForm.style.display = "none";
         create_card(body, block);
+        fetch(path + "/show", {
+            metod: "get",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function(result) {
+            return result.json();
+        })
+        .then(function(data) {
+            localStorage.setItem("cats_data", JSON.stringify(data));
+        })
     }
     else {
         return res.json();

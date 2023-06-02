@@ -48,6 +48,18 @@ function setLike(el, id, like) {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        fetch(path + "/show", {
+            metod: "get",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function(result) {
+                return result.json();
+            })
+            .then(function(data) {
+                localStorage.setItem("cats_data", JSON.stringify(data));
+            })
     })
 }
 
@@ -59,5 +71,17 @@ function del_cat(id, element) {
         if(res.status === 200){
             element.remove();
         }
-})
+    })
+    fetch(path + "/show", {
+        metod: "get",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(function(result) {
+        return result.json();
+    })
+    .then(function(data) {
+        localStorage.setItem("cats_data", JSON.stringify(data));
+    })
 }
