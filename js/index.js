@@ -1,20 +1,33 @@
-/*fetch(path + "/show", {
-    metod: "get",
-    headers: {
-        "Content-Type": "application/json"
-    }
-})
-    .then(function(result) {
-        return result.json();
-    })
-    .then(function(data) {
-        //console.log(data);
-        cats = [...data];
-        localStorage.setItem("cats_data", JSON.stringify(data));
-        for(let pet of data){
-            create_card(pet, block);
+
+if(cats) {
+    try {
+        cats = JSON.parse(cats);
+        for(let i = 0; i< cats.length; i++) {
+            create_card(cats[i], block);
         }
-    })*/
+    }
+    catch(error) {
+        cats = null;
+    }
+}
+else {
+    fetch(path + "/show", {
+        metod: "get",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+        .then(function(result) {
+            return result.json();
+       
+        })
+        .then(function(data) {
+            localStorage.setItem("cats_data", JSON.stringify(data));
+            for(let pet of data){
+                create_card(pet, block);
+            }
+        })
+}
 
 plus.addEventListener("click", function() {
     addForm.style.display = "flex";
@@ -36,7 +49,7 @@ form1.addEventListener("submit", function(element) {
         // на сервер отправляется "name = value" (т.е свойство и его значение в объекте)
         console.log(inp.name);
         console.log(inp.value);*/
-        if(inp.name) { //если элемент формы имеет атрибут name( значит это не кнопка)
+        if(inp.name) { //если элемент формы имеет атрибут name(значит это не кнопка)
             if(inp.type === "checkbox") {
                 body[inp.name] = inp.checked;
             }
