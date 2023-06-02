@@ -182,3 +182,32 @@ form button {
     align-items: center;
 }
 
+.box {
+    width: 100%;
+    display: flex;
+}
+
+.cat_foto {
+    width: 50%;
+    height: 250px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+} 
+
+.cat_info {
+    border: 3px solid rgb(36, 199, 85);
+    border-radius: 5px;
+    width: 60%;
+}
+
+span {
+    color: #FF1493;
+    margin: 0;
+}
+
+.cat_info {
+    display: grid;
+}

@@ -21,13 +21,18 @@ let create_card = function(pet, tag) {                          // функци�
     }
 
     let but_info = document.createElement("button");                // создаю элемент для блока кнопок
-    but_info.className = "but_card button_change";
+    but_info.className = "but_info but_card button_change";
     but_info.innerText = "о кисе";
+    but_info.addEventListener("click", element => {
+        location.assign(`info.html?${pet.id}`);
+    });
 
     let but_del = document.createElement("button");                // создаю элемент для блока кнопок
-    but_del.className = "but_card button_change";
+    but_del.className = "but_del but_card button_change";
     but_del.innerText = "удалить";
-    but_del.addEventListener('click', (element) => {del_cat(pet.id, card)});
+    but_del.addEventListener('click', (element) => {
+        del_cat(pet.id, card)
+    });
 
     card.append(cat_name, card_image, but_info, but_del);                 // все элементы добавляем в карточку
     tag.append(card);

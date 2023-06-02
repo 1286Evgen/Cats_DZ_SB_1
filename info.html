@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИНФОРМАЦИЯ О КИСЕ</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body></body>
+    <div class="box">
+        <div class="cat_foto"></div>
+        <div class="cat_info"></div>
+    </div>
+    <script>
+        let foto = document.querySelector(".cat_foto");
+        let info = document.querySelector(".cat_info");
+        let id = location.search[1];
+        let user = "1286Evgen";
+        let path = `https://cats.petiteweb.dev/api/single/${user}`;
+
+        fetch(path + "/show/" + id, {
+            metod: "get",
+            headers: {
+            "Content-Type": "application/json"
+            }
+        })
+            .then(function(result) {
+                return result = result.json()
+            })
+            .then(function(res) {
+                if(res.image) {
+                    console.log(res);
+                    foto.style.backgroundImage = `url(${res.image})`;
+                }
+                else {
+                    foto.style.backgroundImage = "url(cat_unknown.png)";
+                }
+                if(res.name) {
+                    let name = document.createElement("span");
+                    name.innerHTML = `имя: ${res.name}`;
+                    info.append(name);
+                }
+                if (res.age) {
+                    let age = document.createElement("span");
+                    age.innerHTML = `возраст: ${res.age}`;
+                    info.append(age);
+                }
+                if (res.favorite) {
+                    let favorite = document.createElement("span");
+                    favorite.innerHTML = "любимчик: да";
+                    info.append(favorite);
+                }
+                if (res.description) {
+                    let description = document.createElement("span");
+                    description.innerHTML = `дополнительная информация: <br> ${res.description}`;
+                    info.append(description);
+                }
+            })
+    </script>
+</body>
+</html>
