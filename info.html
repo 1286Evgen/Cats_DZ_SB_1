@@ -4,57 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ИНФОРМАЦИЯ О КИСЕ</title>
-    <link rel="stylesheet" href="index.css"/>
+    <title>ИНФОРМАЦИЯ О КИСЕ</title> <!-- Создал название для отдельного сайта с информацией об одном коте--> 
+    <link rel="stylesheet" href="index.css"/> <!-- Подключил стили CSS-->
 </head>
-<body></body>
-    <div class="box">
-        <div class="cat_foto"></div>
-        <div class="cat_info"></div>
+<body>
+    <div class="box">  <!-- Создал блок для добавления  блоков с информацией о коте-->
+        <div class="cat_foto"></div> <!-- Создал блок для добавления фото кота-->
+        <div class="cat_info"></div> <!-- Создал блок для добавления информации о коте-->
     </div>
-    <script>
-        let foto = document.querySelector(".cat_foto");
-        let info = document.querySelector(".cat_info");
-        let id = location.search[1];
-        let user = "1286Evgen";
-        let path = `https://cats.petiteweb.dev/api/single/${user}`;
+    <script> // пишу код JS для вывода информации о коте на экран
+        let foto = document.querySelector(".cat_foto"); // определил переменную с блоком для фото кота
+        let info = document.querySelector(".cat_info"); // определил переменную с блоком для писменной информации о коте
+        let id = location.search[1]; // определил переменную с id кота, id беру из location (куда предворительно передал id в search)
+        let user = "1286Evgen"; // задаю имя пользователя
+        let path = `https://cats.petiteweb.dev/api/single/${user}`; // задаю путь к удаленному хранилищу
 
-        fetch(path + "/show/" + id, {
-            metod: "get",
+        fetch(path + "/show/" + id, { // делаю fetch запрос из базы данных о коте по id
+            metod: "get", // определяю форму запроса
             headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json" // определяю какой тип ответа мне нужен
             }
         })
-            .then(function(result) {
-                return result = result.json()
+            .then(function(result) { 
+                return result = result.json() // после получения ответа, преобразую его в объект json
             })
-            .then(function(res) {
-                if(res.image) {
-                    console.log(res);
-                    foto.style.backgroundImage = `url(${res.image})`;
+            .then(function(res) { // начинаю обрабатывать полученый и преобразованный ответ
+                if(res.image) { // если в ответе есть ссылка на фото, то
+                    foto.style.backgroundImage = `url(${res.image})`;  // задаю переменной (блоку фото) фон в виде фото кота
                 }
                 else {
-                    foto.style.backgroundImage = "url(cat_unknown.png)";
+                    foto.style.backgroundImage = "url(cat_unknown.png)"; // если фото нет, то фото ставлю по умолчанию
                 }
-                if(res.name) {
-                    let name = document.createElement("span");
-                    name.innerHTML = `имя: ${res.name}`;
-                    info.append(name);
+                if(res.name) { // если в ответе есть имя кота, то
+                    let name = document.createElement("span"); // создаю строку
+                    name.innerHTML = `имя: ${res.name}`; // в эту строку добавляю имя
+                    info.append(name); // добавляю эту строку в поле с информацией о коте
                 }
-                if (res.age) {
-                    let age = document.createElement("span");
-                    age.innerHTML = `возраст: ${res.age}`;
-                    info.append(age);
+                if (res.age) { // если в ответе есть возраст кота, то
+                    let age = document.createElement("span"); // создаю строку
+                    age.innerHTML = `возраст: ${res.age}`; //в эту строку добавляю возраст
+                    info.append(age); // добавляю эту строку в поле с информацией о коте
                 }
-                if (res.favorite) {
-                    let favorite = document.createElement("span");
-                    favorite.innerHTML = "любимчик: да";
-                    info.append(favorite);
+                if (res.favorite) { // если в ответе кот любимчик, то
+                    let favorite = document.createElement("span"); // создаю строку
+                    favorite.innerHTML = "любимчик: да"; //в эту строку пишу что кот любимчик 
+                    info.append(favorite); // добавляю эту строку в поле с информацией о коте
                 }
-                if (res.description) {
-                    let description = document.createElement("span");
-                    description.innerHTML = `дополнительная информация: <br> ${res.description}`;
-                    info.append(description);
+                if (res.description) { // если в ответе есть дополнительная информация о коте, то
+                    let description = document.createElement("span"); // создаю строку
+                    description.innerHTML = `дополнительная информация: <br> ${res.description}`; // в эту строку добавляю доп информацию о коте
+                    info.append(description); // добавляю эту строку в поле с информацией о коте
                 }
             })
     </script>
