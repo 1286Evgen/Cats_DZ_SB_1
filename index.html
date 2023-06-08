@@ -4,42 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>МОИ КИСКИ</title>
+    <title>МОИ КИСКИ</title> <!-- Установил название сайта--> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="index.css"/>
+    crossorigin="anonymous" referrerpolicy="no-referrer"/> <!--Подключил библиотеку иконок font-awesome-->
+    <link rel="stylesheet" href="index.css"/> <!--Подключил CSS стили-->
 </head>
 <body>
     <header>
-        <h1>МОИ КИСКИ</h1>
+        <h1>МОИ КИСКИ</h1> <!-- Создал шапку с названием сайта--> 
     </header>
-    <div class="page"></div>
-    <button class="add_cat_button button_change">
-        <i class="fa-solid fa-plus"></i>
+    <div class="page"></div> <!-- Создал страницу сайта в которую буду добавлять карточки котов--> 
+    <button class="add_cat_button button_change"> <!-- Создал кнопку для добавления карточкок с котами--> 
+        <i class="fa-solid fa-plus"></i> <!-- Установил иконку в виде плюса для кнопки добавления кота--> 
     </button>
-    <div class="form_back">
-        <div class="add_form">
-            <i class="fa-regular fa-circle-xmark form-close"></i>
-            <h3>добавить кису</h3>
-            <form id="add">
-                <!--<input type="text" name="id" placeholder="id кисы">-->
-                <input type="text" name="name" placeholder="имя кисы" required>
-                <input type="text" name="image" placeholder="фото кисы">
-                <input type="number" name="age" placeholder="возраст кисы">
+    <div class="form_back"> <!-- Создал блок с задним фоном для формы добавления карточки кота--> 
+        <div class="add_form"> <!-- Создал блок для формы добавления кота--> 
+            <i class="fa-regular fa-circle-xmark form-close"></i> <!-- Установил иконку в виде крестика для сворачивания формы добавления кота--> 
+            <h3>добавить кису</h3> <!-- Создал заголовок для формы добавления кота--> 
+            <form id="add"> <!-- Создал форму добавления кота--> 
+                <!--<input type="text" name="id" placeholder="id кисы">--> <!-- Поле для ввода id нового кота--> 
+                <input type="text" name="name" placeholder="имя кисы" required> <!-- Поле для ввода имени нового кота--> 
+                <input type="text" name="image" placeholder="фото кисы"> <!-- Поле для ввода ссылки на фото нового кота--> 
+                <input type="number" name="age" placeholder="возраст кисы"> <!-- Поле для ввода возраста нового кота--> 
                 <label>любимчик
-                    <input type="checkbox" name="favorite">
+                    <input type="checkbox" name="favorite"> <!-- Чекбокс с пометкой любимчик-не любимчик--> 
                 </label>
-                <textarea name="description" placeholder="инфомация о кисе"></textarea>
-                <button type="submit">OK</button>
+                <textarea name="description" placeholder="инфомация о кисе"></textarea> <!-- Текстовое поле для ввода информации о новом коте--> 
+                <button type="submit">OK</button> <!-- Кнопка для отправки заполненой формы с информацией о новом коте--> 
             </form>
         </div>
     </div>
-    <script src="js/functions.js"></script>
-    <script src="js/global.js"></script>
-    <script src="js/index.js"></script>
-
+    <script src="js/functions.js"></script> <!-- Подключил фаил с функциями JS--> 
+    <script src="js/global.js"></script> <!-- Подключил фаил с глобальными переменными JS--> 
+    <script src="js/index.js"></script> <!-- Подключил фаил с основным кодом JS--> 
 </body>
 </html>
             
-            <!-- комитим любой текст -->
