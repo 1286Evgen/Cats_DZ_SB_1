@@ -5,7 +5,7 @@ let addForm = document.querySelector(".form_back");
 let addFormClose = document.querySelector(".form-close");
 let form1 = document.forms.add;
 
-let cats = localStorage.getItem("cats_data")// массив в скотами в локальном хранилище
+let cats = localStorage.getItem("cats_data"); // массив в скотами в локальном хранилище
 
 let user = "1286Evgen";
 let path = `https://cats.petiteweb.dev/api/single/${user}`;
